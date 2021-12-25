@@ -1,7 +1,9 @@
 
 package thetoybox;
-import toyproducts.models.HelicopterToy;
-import toyproducts.models.CarToy;
+import branches.AmericanToyBusiness;
+import business.ToyBusiness;
+import toyproducts.models.AmericanHelicopterToy;
+import toyproducts.models.AmericanCarToy;
 import java.util.*;
 import java.util.stream.Collectors;
 import toyproducts.Toy;
@@ -12,7 +14,7 @@ public class Main {
     
     public static void main(String[] args) {
         
-        ToyBusiness business = new ToyBusiness();
+        ToyBusiness business = new AmericanToyBusiness();
         
         Scanner scanner = new Scanner(System.in);
         ArrayList<Toy> toys = new ArrayList<>();
