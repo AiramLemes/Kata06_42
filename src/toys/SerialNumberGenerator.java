@@ -4,17 +4,11 @@ package toys;
 
 public class SerialNumberGenerator {
     
-    private int serialNumber;
-
+    private Integer serialNumber = 0;
     
-    public SerialNumberGenerator() {
+    public Integer next() {
+        return this.serialNumber++;
         
-        this.serialNumber = 0;
-    }
-    
-    public int next() {
-        this.serialNumber++;
-        return serialNumber;
     }
     
     
