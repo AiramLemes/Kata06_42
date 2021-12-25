@@ -9,7 +9,7 @@ public class Main {
     
     public static void main(String[] args) {
         
-        SerialNumberGenerator serial = new SerialNumberGenerator();
+        ToyBusiness business = new ToyBusiness();
         
         Scanner scanner = new Scanner(System.in);
         ArrayList<Car> cars = new ArrayList<>();
@@ -24,10 +24,8 @@ public class Main {
             switch (input) {
                 
                 case "car": 
-                    Car car = new Car(serial.next());
-                    car.pack();
-                    car.label();
-                    cars.add(car);
+                    
+                    cars.add(business.createCar());
                     System.out.println("Built Cars: " + cars.stream()
                                         .map(c -> c.getSerialNumber().toString())
                                         .collect(Collectors.joining(", ")));
@@ -35,10 +33,8 @@ public class Main {
                     
                 
                 case "helicopter":
-                    Helicopter helicopter = new Helicopter(serial.next());
-                    helicopter.pack();
-                    helicopter.label();
-                    helicopters.add(helicopter);
+                    
+                    helicopters.add(business.createHelicopter());
                     System.out.println("Built Helicopters: " + helicopters.stream()
                                         .map(c -> c.getSerialNumber().toString())
                                         .collect(Collectors.joining(", ")));
