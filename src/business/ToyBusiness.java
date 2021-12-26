@@ -5,14 +5,21 @@ import toyproducts.models.AmericanHelicopterToy;
 import toyproducts.models.AmericanCarToy;
 import java.util.stream.Collectors;
 import toyproducts.Toy;
-import toys.SerialNumberGenerator;
+import factories.SerialNumberGenerator;
+import factories.ToyFactory;
 
-public abstract class ToyBusiness {
-    final protected SerialNumberGenerator generator = new SerialNumberGenerator();
+public class ToyBusiness {
     
-    public abstract Toy createToy(String type);
+    private final ToyFactory toyFactory;
     
-    public ToyBusiness() {
+
+    public ToyBusiness(ToyFactory toyFactory) {
+        this.toyFactory = toyFactory;
+    }
+    
+    
+    public Toy createToy(String type) {
+        return this.toyFactory.produceToy(type);
     }
     
 }

@@ -1,20 +1,22 @@
 
 package thetoybox;
-import branches.AmericanToyBusiness;
+
 import business.ToyBusiness;
+import factories.regionalFactories.AmericanToyFactory;
+import factories.regionalFactories.AsianToyFactory;
 import toyproducts.models.AmericanHelicopterToy;
 import toyproducts.models.AmericanCarToy;
 import java.util.*;
 import java.util.stream.Collectors;
 import toyproducts.Toy;
-import toys.*;
 
 public class Main {
 
     
     public static void main(String[] args) {
         
-        ToyBusiness business = new AmericanToyBusiness();
+        ToyBusiness business = new ToyBusiness(new AmericanToyFactory());
+        //ToyBusiness business = new ToyBusiness(new AsianToyFactory());
         
         Scanner scanner = new Scanner(System.in);
         ArrayList<Toy> toys = new ArrayList<>();

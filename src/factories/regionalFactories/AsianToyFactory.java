@@ -1,12 +1,13 @@
 
-package branches;
+package factories.regionalFactories;
 
 import business.ToyBusiness;
+import factories.ToyFactory;
 import toyproducts.Toy;
 import toyproducts.models.*;
 
 
-public class AsianToyBusiness extends ToyBusiness {
+public class AsianToyFactory extends ToyFactory {
     
     
     @Override
@@ -16,15 +17,11 @@ public class AsianToyBusiness extends ToyBusiness {
 
             case "car":
                 AsianCarToy car = new AsianCarToy(this.generator.next());
-                car.pack();
-                car.label();
                 return car;
 
 
             case "helicopter":
                 AsianHelicopterToy helicopter = new AsianHelicopterToy(this.generator.next());
-                helicopter.pack();
-                helicopter.label();
                 return helicopter;
 
             default:
